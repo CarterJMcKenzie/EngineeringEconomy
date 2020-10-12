@@ -2,6 +2,7 @@ def compound_interest(rate_per_period, periods, initial_amount):
     final_amount = (rate_per_period + 1)**periods * initial_amount
     return final_amount
 
+
 def determine_compound_interest_rate(final_amount, initial_amount, periods):
     interest_rate = (final_amount/initial_amount)** -periods - 1
     return interest_rate
@@ -73,43 +74,42 @@ def roof(discount_rate, period, fixed_cost):
 if __name__ == "__main__":
 
     # linear cost estimate
-    fixed_cost = 1000
-    price1, quantity1 = 1000, 12
-    price2, quantity2 = 2300, 25
-    marginal_cost = linear_marginal_cost(price1, quantity1, price2, quantity2)
-    units = 30
-    cost_estimate = linear_cost_approximation(fixed_cost, marginal_cost, units)
-    print(f"Cost Estimate: {cost_estimate}")
+    # fixed_cost = 0
+    # price1, quantity1 = 19000, 3
+    # price2, quantity2 = 35000, 7
+    # marginal_cost = linear_marginal_cost(price1, quantity1, price2, quantity2)
+    # units = 4
+    # cost_estimate = linear_cost_approximation(fixed_cost, marginal_cost, units)
+    # print(f"Cost Estimate: {cost_estimate}")
 
 
     # net present value example
-    discount_rate = 0.17
-    periods = 5
-    revenue_list = [18000, 0, 0, 0, 0, 0]
-    cost_list = [0, 3600, 3600, 3600, 3600, 3600]
+    discount_rate = 0.1
+    periods = 3
+    revenue_list = [0, 0, 130000, 130000]
+    cost_list = [10000, 0, 110000, 110000]
     npv = net_present_value(discount_rate, periods, revenue_list, cost_list)
     print(f"Net Present Value: {npv}")
 
 
     # annual worth example
-    discount_rate = 0.17
-    periods = 6
-    npv = 197
+    discount_rate = 0.08
+    periods = 3
     AW = annual_worth(discount_rate, periods, npv)
     print(f"Annual Worth: {AW}")
 
 
     # internal rate of return example
-    periods = 10
-    revenue_list = [0, 24, 45, 90, 108, 130, 156, 187, 224, 269, 322]
-    cost_list = [100, 30, 36, 42, 50, 60, 73, 87, 105, 125, 150]
-    IRR = internal_rate_return(periods, revenue_list, cost_list)
-    print(f"Internal Rate of Return: {round(IRR,4)}%")
+    # periods = 10
+    # revenue_list = [0, 24, 45, 90, 108, 130, 156, 187, 224, 269, 322]
+    # cost_list = [100, 30, 36, 42, 50, 60, 73, 87, 105, 125, 150]
+    # IRR = internal_rate_return(periods, revenue_list, cost_list)
+    # print(f"Internal Rate of Return: {round(IRR,4)}%")
 
 
     # roof problem
-    discount_rate = 0.10
-    periods = 10
-    initial_cost = 3500
-    roof_aw = roof(discount_rate, periods, initial_cost)
-    print(f"Roof Annual Worth: {roof_aw}")
+    # discount_rate = 0.10
+    # periods = 1
+    # initial_cost = 348
+    # roof_aw = roof(discount_rate, periods, initial_cost)
+    # print(f"Roof Annual Worth: {roof_aw}")
